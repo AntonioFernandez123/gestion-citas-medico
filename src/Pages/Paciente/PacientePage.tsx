@@ -1,17 +1,18 @@
 import React from "react";
 import { useState, useEffect } from 'react';
-import { Paciente } from "../../types";
+
 import MainHeader from "../../Components/mainHeader/MainHeader";
 import "./PacientePage.css"
+import { PacienteDTO } from "../../Models/PacienteDTO";
 
 
 const PacientePage = () => {
   interface pacienteState {
-    pac: Array<Paciente>;
+    pac: Array<PacienteDTO>;
   }
   const [paciente, setPaciente] = useState<pacienteState["pac"]>([]);
   useEffect(() => {
-    const fecthPaciente = (): Promise<Paciente[]> => {
+    const fecthPaciente = (): Promise<PacienteDTO[]> => {
       return fetch('http://localhost:5294/api/paciente').then(response => response.json())
     }
     fecthPaciente()
