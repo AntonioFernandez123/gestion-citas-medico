@@ -1,0 +1,19 @@
+.divPaciente{
+    display: flex;
+}
+.tablaPaciente{
+    border-collapse: collapse;
+    text-align: center;
+}
+th,td{
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+}
+/* Estilos para las filas impares */
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+/* Estilos para las filas pares */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

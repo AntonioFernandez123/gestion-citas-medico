@@ -1,0 +1,17 @@
+.home{
+    margin-top: 20px;
+    text-align: center;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+}
+
+.botonHome:hover{
+    background-color:rgb(104, 208, 243);
+}
+.botonHome:hover img{
+    width: 250px;
+    height: 250px;
+}

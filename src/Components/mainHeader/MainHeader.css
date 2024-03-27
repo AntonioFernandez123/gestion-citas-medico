@@ -1,0 +1,26 @@
+.imgHeader{
+    height: 50px;
+    width: 50px;
+    margin-left: 30px;
+}
+.header{
+    background-color: rgb(100, 195, 227);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.tituloHeader{
+    font-size: x-large;
+    margin-left: 20px;
+    margin-top: 6px;
+}
+.divDerecha{
+    display: flex;
+}
+.divIzquierda{
+    margin-right: 40px;
+}
+.botonHeader{
+    font-size: large;
+    padding: 5px 10px;
+}
