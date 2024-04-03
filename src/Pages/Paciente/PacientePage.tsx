@@ -1,31 +1,44 @@
 import React from "react";
 import { useState, useEffect } from 'react';
-
 import MainHeader from "../../Components/mainHeader/MainHeader";
 import "./PacientePage.css"
 import { PacienteDTO } from "../../Models/PacienteDTO";
-
+import * as pacienteService from "../../Service/PacienteService";
+import { CrearPaciente } from "./crearPaciente";
+import { PacienteRequestDTO } from "../../Models/PacienteRequestDTO";
+import { Link } from "react-router-dom";
 
 const PacientePage = () => {
   interface pacienteState {
-    pac: Array<PacienteDTO>;
+    pac: Array<PacienteDTO> | Array<PacienteRequestDTO>;
   }
+
   const [paciente, setPaciente] = useState<pacienteState["pac"]>([]);
+
   useEffect(() => {
-    const fecthPaciente = (): Promise<PacienteDTO[]> => {
-      return fetch('http://localhost:5294/api/paciente').then(response => response.json())
-    }
-    fecthPaciente()
-      .then(paciente => {
-        console.log(paciente);
-        setPaciente(paciente);
-      })
+    getListPacientes()
   }, []);
+
+  const getListPacientes = async () => {
+    const res = await pacienteService.getAllPacientes();
+    console.log(res.data);
+    setPaciente(res.data)
+  }
+
+  const handleBorrarPaciente = async (id:number|undefined) => {
+    const confirmacion = window.confirm("¿Estás seguro de que deseas borrar este paciente?");
+    if (confirmacion){
+      await pacienteService.deletePaciente(id);
+      const updatePacientes = paciente.filter(p => p.id !== id);
+      setPaciente(updatePacientes)
+    }
+  }
 
   return (
     <div>
       <MainHeader />
       <div className="divPaciente">
+
         <div className="tablaPaciente">
           <table>
             <thead>
@@ -36,6 +49,7 @@ const PacientePage = () => {
                 <th>NSS</th>
                 <th>Telefono</th>
                 <th>Direccion</th>
+                <th>Ver</th>
                 <th>Modificar</th>
                 <th>Borrar</th>
               </tr>
@@ -49,16 +63,20 @@ const PacientePage = () => {
                   <td>{p.nss}</td>
                   <td>{p.telefono}</td>
                   <td>{p.direccion}</td>
-                  {/* <td><button></button></td>
-                  <td><button></button></td> */}
+                  <td><Link to={"/paciente/" + p.id}>Ver</Link></td>
+                  <td></td>
+                  <td><button className="borrarPaciente" onClick={() => handleBorrarPaciente(p.id)}>Borrar</button></td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        <div>hola mundo</div>
+        <div className="formPaciente">
+          <CrearPaciente returnNewPaciente={(newPaciente) =>
+            getListPacientes()
+          } />
+        </div>
       </div>
-
     </div>
   )
 }

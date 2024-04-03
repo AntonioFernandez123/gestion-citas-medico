@@ -1,12 +1,12 @@
 export class UsuarioDTO{
-    id : number
+    id : number | undefined
     nombre : string
     apellidos : string
     usuario : string
     clave : string
 
-    constructor(id: number, nombre: string,apellidos:string,usuario:string,clave:string){
-        this.id = id;
+    constructor( nombre: string,apellidos:string,usuario:string,clave:string, id?: number){
+        this.id = id || undefined;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.usuario = usuario;

@@ -4,6 +4,8 @@ import HomePage from "../Pages/Home/HomePage";
 import MedicoPage from "../Pages/Medico/MedicoPage";
 import PacientePage from "../Pages/Paciente/PacientePage";
 import CitaPage from "../Pages/Cita/CitaPage";
+import { VerPaciente } from "../Pages/Paciente/VerPaciente";
+
 
 
 //Para la carga lazy en el routing 
@@ -22,6 +24,7 @@ export const router = createBrowserRouter([
     { path: "", element: <HomePage /> },
     { path: "medico", element: <MedicoPage /> },
     { path: "paciente", element: <PacientePage /> },
+    { path: "paciente/:id", element: <VerPaciente/>},
     { path: "cita", element: <CitaPage /> },
 ]);
 

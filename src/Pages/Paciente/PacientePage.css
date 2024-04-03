@@ -1,5 +1,7 @@
 .divPaciente{
     display: flex;
+    
+    justify-content: space-evenly;
 }
 .tablaPaciente{
     border-collapse: collapse;
@@ -16,4 +18,41 @@ tr:nth-child(odd) {
 /* Estilos para las filas pares */
 tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+.formPaciente{
+    text-align: center;
+}
+.inputPaciente{
+    padding: 6px 10px;
+    margin-bottom: 5px;
+    width: 75%;
+}
+.guardaPaciente{
+    padding: 10px 10px;
+    width: 75%;
+    font-size: large;
+}
+.verPaciente{
+    border: solid 2px black;
+    margin: 20px;
+    padding: 20px;
+}
+.datosPaciente{
+    display: flex;
+    justify-content: space-around;
+}
+.datosPersonales{
+    width: 45%;
+}
+.datosTarjeta{
+    width: 45%;
+}
+.medicosPaciente{
+    margin: 15px 25px;
+}
+.borrarPaciente{
+    border: 0;
+    padding: 0px;
+    text-decoration: underline;
+    background-color: transparent;
 }
