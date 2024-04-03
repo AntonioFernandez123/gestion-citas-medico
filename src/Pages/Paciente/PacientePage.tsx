@@ -4,9 +4,9 @@ import MainHeader from "../../Components/mainHeader/MainHeader";
 import "./PacientePage.css"
 import { PacienteDTO } from "../../Models/PacienteDTO";
 import * as pacienteService from "../../Service/PacienteService";
-import { CrearPaciente } from "./crearPaciente";
 import { PacienteRequestDTO } from "../../Models/PacienteRequestDTO";
 import { Link } from "react-router-dom";
+import { CrearPaciente } from "./CrearPaciente";
 
 const PacientePage = () => {
   interface pacienteState {
@@ -64,12 +64,14 @@ const PacientePage = () => {
                   <td>{p.telefono}</td>
                   <td>{p.direccion}</td>
                   <td><Link to={"/paciente/" + p.id}>Ver</Link></td>
-                  <td></td>
+                  <td><Link to={"/paciente/actualiza/" + p.id}>Modificar</Link></td>
                   <td><button className="borrarPaciente" onClick={() => handleBorrarPaciente(p.id)}>Borrar</button></td>
                 </tr>
               ))}
             </tbody>
           </table>
+          <br />
+          <Link to={"/"}>Volver a Inicio</Link>
         </div>
         <div className="formPaciente">
           <CrearPaciente returnNewPaciente={(newPaciente) =>
@@ -82,16 +84,3 @@ const PacientePage = () => {
 }
 
 export default PacientePage;
-
-/*
-<th>ID</th>
-<th>Nombre</th>
-<th>Apellidos</th>
-<th>Usuario</th>
-<th>Clave</th>
-<th>NSS</th>
-<th>NumTarjeta</th>
-<th>Telefono</th>
-<th>Direccion</th>
-<th>Medicos</th>
-*/

@@ -5,6 +5,7 @@ import MedicoPage from "../Pages/Medico/MedicoPage";
 import PacientePage from "../Pages/Paciente/PacientePage";
 import CitaPage from "../Pages/Cita/CitaPage";
 import { VerPaciente } from "../Pages/Paciente/VerPaciente";
+import { ActualizaPaciente } from "../Pages/Paciente/ActualizaPaciente";
 
 
 
@@ -24,7 +25,8 @@ export const router = createBrowserRouter([
     { path: "", element: <HomePage /> },
     { path: "medico", element: <MedicoPage /> },
     { path: "paciente", element: <PacientePage /> },
-    { path: "paciente/:id", element: <VerPaciente/>},
+    { path: "paciente/:id", element: <VerPaciente />},
+    { path: "paciente/actualiza/:id", element: <ActualizaPaciente />},
     { path: "cita", element: <CitaPage /> },
 ]);
 

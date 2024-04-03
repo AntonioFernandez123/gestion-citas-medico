@@ -17,4 +17,8 @@ export const getPacienteById = async (idPaciente:number) =>{
 export const deletePaciente = async (idPaciente:number|undefined) => {
     return axios.delete<PacienteDTO>('http://localhost:5294/api/paciente/'+idPaciente)
 }
+
+export const updatePaciente = async (idPaciente:number, paciente:PacienteRequestDTO) => {
+    return axios.put<PacienteDTO>('http://localhost:5294/api/paciente/'+idPaciente, paciente)
+}
  

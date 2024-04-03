@@ -56,3 +56,21 @@ tr:nth-child(even) {
     text-decoration: underline;
     background-color: transparent;
 }
+.updatePaciente{
+    padding: 6px 10px;
+    margin-bottom: 5px;
+    width: 75%;
+    margin-left: 10%;
+}
+.tituloUpdatePaciente{
+    text-align: center;
+}
+.labelUpdatePaciente{
+    margin-left: 10%;
+}
+.actualizaPaciente{
+    padding: 10px 10px;
+    width: 75%;
+    font-size: large;
+    margin-left: 11%;
+}

@@ -12,6 +12,6 @@ img{
     background-color:rgb(104, 208, 243);
 }
 .botonHome:hover img{
-    width: 250px;
-    height: 250px;
+    width: 220px;
+    height: 220px;
 }
