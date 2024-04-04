@@ -26,8 +26,6 @@ export const ActualizaPaciente: React.FC<ActualizaPacienteProps> = () => {
         setPaciente(res.data)
     }
 
-
-
     const [updatePaciente, setUpdatePaciente] = useState<PacienteRequestDTO>(initPaciente)
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {

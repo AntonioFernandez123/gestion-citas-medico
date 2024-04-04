@@ -13,6 +13,7 @@ const PacientePage = () => {
     pac: Array<PacienteDTO> | Array<PacienteRequestDTO>;
   }
 
+  const [loading, setLoading] = useState(false)
   const [paciente, setPaciente] = useState<pacienteState["pac"]>([]);
 
   useEffect(() => {
@@ -20,9 +21,11 @@ const PacientePage = () => {
   }, []);
 
   const getListPacientes = async () => {
+    setLoading(true);
     const res = await pacienteService.getAllPacientes();
     console.log(res.data);
     setPaciente(res.data)
+    setLoading(false)
   }
 
   const handleBorrarPaciente = async (id:number|undefined) => {
@@ -34,6 +37,7 @@ const PacientePage = () => {
     }
   }
 
+  if (loading) return <i>Cargando ...</i>
   return (
     <div>
       <MainHeader />

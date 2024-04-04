@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Routes, createBrowserRouter } from 'react-router-dom';
 import HomePage from "../Pages/Home/HomePage";
 import MedicoPage from "../Pages/Medico/MedicoPage";
@@ -9,26 +9,40 @@ import { ActualizaPaciente } from "../Pages/Paciente/ActualizaPaciente";
 
 
 
-//Para la carga lazy en el routing 
-// const LazyMedicoPage = lazy(() => import('../Pages/Medico/MedicoPage'))
-// const LazyPacientePage = lazy(() => import('../Pages/Paciente/PacientePage'))
-// const LazyCitaPage = lazy(() => import('../Pages/Cita/CitaPage'))
-
-// export const router = createBrowserRouter([
-//     { path: "", element: <HomePage /> },
-//     { path: "medico", element: <LazyMedicoPage /> },
-//     { path: "paciente", element: <LazyPacientePage /> },
-//     { path: "cita", element: <LazyCitaPage /> },
-// ]);
+// Para la carga lazy en el routing 
+const LazyMedicoPage = lazy(() => import('../Pages/Medico/MedicoPage'))
+const LazyPacientePage = lazy(() => import('../Pages/Paciente/PacientePage'))
+const LazyCitaPage = lazy(() => import('../Pages/Cita/CitaPage'))
 
 export const router = createBrowserRouter([
     { path: "", element: <HomePage /> },
-    { path: "medico", element: <MedicoPage /> },
-    { path: "paciente", element: <PacientePage /> },
+    { path: "medico", element: (
+        <Suspense fallback={<div>Loading...</div>}>
+            <LazyMedicoPage />
+        </Suspense>
+    ) },
+    { path: "paciente", element: (
+        <Suspense fallback={<div>Loading...</div>}>
+            <LazyPacientePage />
+        </Suspense>
+    ) },
     { path: "paciente/:id", element: <VerPaciente />},
     { path: "paciente/actualiza/:id", element: <ActualizaPaciente />},
-    { path: "cita", element: <CitaPage /> },
+    { path: "cita", element:(
+        <Suspense fallback={<div>Loading...</div>}>
+            <LazyCitaPage />
+        </Suspense>
+    ) },
 ]);
+
+// export const router = createBrowserRouter([
+//     { path: "", element: <HomePage /> },
+//     { path: "medico", element: <MedicoPage /> },
+//     { path: "paciente", element: <PacientePage /> },
+//     { path: "paciente/:id", element: <VerPaciente />},
+//     { path: "paciente/actualiza/:id", element: <ActualizaPaciente />},
+//     { path: "cita", element: <CitaPage /> },
+// ]);
 
 
 
