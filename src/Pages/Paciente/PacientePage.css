@@ -1,6 +1,6 @@
+/* Estilos Para Paciente Page */
 .divPaciente{
     display: flex;
-    
     justify-content: space-evenly;
 }
 .tablaPaciente{
@@ -8,7 +8,7 @@
     text-align: center;
 }
 th,td{
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid transparent;
     padding: 8px;
 }
 /* Estilos para las filas impares */
@@ -22,6 +22,9 @@ tr:nth-child(even) {
 .formPaciente{
     text-align: center;
 }
+
+
+/* Estilos Para Crear Paciente */
 .inputPaciente{
     padding: 6px 10px;
     margin-bottom: 5px;
@@ -32,6 +35,8 @@ tr:nth-child(even) {
     width: 75%;
     font-size: large;
 }
+
+/* Estilos Para Ver Paciente */
 .verPaciente{
     border: solid 2px black;
     margin: 20px;
@@ -50,13 +55,21 @@ tr:nth-child(even) {
 .medicosPaciente{
     margin: 15px 25px;
 }
+.mostrarMedicoPaciente{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+/* Estilos Para Borrar Paciente */
 .borrarPaciente{
     border: 0;
     padding: 0px;
     text-decoration: underline;
     background-color: transparent;
 }
-.updatePaciente{
+
+/* Estilos Para Modificar Paciente */
+.inputUpdatePaciente{
     padding: 6px 10px;
     margin-bottom: 5px;
     width: 75%;
@@ -68,9 +81,9 @@ tr:nth-child(even) {
 .labelUpdatePaciente{
     margin-left: 10%;
 }
-.actualizaPaciente{
+.botonUpdatePaciente{
     padding: 10px 10px;
-    width: 75%;
+    width: 30%;
     font-size: large;
-    margin-left: 11%;
+    margin-left: 12%;
 }

@@ -14,7 +14,6 @@ export class PacienteDTO extends UsuarioDTO{
         this.numTarjeta = numTarjeta;
         this.telefono = telefono;
         this.direccion = direccion;
-        this.direccion = direccion; 
         this.medicos = medicos;
     }
 }

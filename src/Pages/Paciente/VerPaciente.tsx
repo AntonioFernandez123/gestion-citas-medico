@@ -53,12 +53,14 @@ export const VerPaciente: React.FC<VerPacienteProps> = () => {
             <div className="medicosPaciente">
                 <fieldset>
                     <legend>Medicos</legend>
-                    {paciente.medicos.map(m => (
-                        <ul key={m.id}>ID: {m.id}
-                            <li>Nombre Completo: {m.apellidos}, {m.nombre}</li>
-                            <li>Usuario: {m.usuario}</li>
-                        </ul>
-                    ))}
+                    <div className="mostrarMedicoPaciente">
+                        {paciente.medicos.map(m => (
+                            <ul key={m.id}>ID: {m.id}
+                                <li>Nombre Completo: {m.apellidos}, {m.nombre}</li>
+                                <li>Usuario: {m.usuario}</li>
+                            </ul>
+                        ))}
+                    </div>
                 </fieldset>
             </div>
             <div>
@@ -66,6 +68,5 @@ export const VerPaciente: React.FC<VerPacienteProps> = () => {
             </div>
             <Link to={"/paciente"}>Volver al Listado</Link>
         </div>
-
     </>
 }

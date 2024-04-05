@@ -33,52 +33,50 @@ export const ActualizaPaciente: React.FC<ActualizaPacienteProps> = () => {
     }
 
     const onUpdate = async () => {
-        const confirmacion = window.confirm("¿Estás seguro de que deseas aztualizar este paciente?");
-        if (confirmacion) {
-            await pacienteService.updatePaciente(paciente.id!, updatePaciente)
-        }
+        await pacienteService.updatePaciente(paciente.id!, updatePaciente)
     }
 
     return <>
         <h1 className="tituloUpdatePaciente">Modifica Paciente</h1>
         <div>
             <label className="labelUpdatePaciente">Id: </label><br />
-            <input value={paciente?.id!} onChange={onChange} type="number" name="id" id="id" readOnly className="updatePaciente" />
+            <input value={paciente?.id!} onChange={onChange} type="number" name="id" id="id" readOnly className="inputUpdatePaciente" />
         </div>
         <div>
             <label className="labelUpdatePaciente">Nombre: </label><br />
-            <input value={updatePaciente.nombre!} onChange={onChange} type="text" name="nombre" id="nombre" placeholder={paciente.nombre} className="updatePaciente" />
+            <input value={updatePaciente.nombre!} onChange={onChange} type="text" name="nombre" id="nombre" placeholder={paciente.nombre} className="inputUpdatePaciente" />
         </div>
         <div>
             <label className="labelUpdatePaciente">Apellidos: </label><br />
-            <input value={updatePaciente.apellidos} onChange={onChange} type="text" name="apellidos" id="apellidos" placeholder={paciente.apellidos} className="updatePaciente" />
+            <input value={updatePaciente.apellidos} onChange={onChange} type="text" name="apellidos" id="apellidos" placeholder={paciente.apellidos} className="inputUpdatePaciente" />
         </div>
         <div>
             <label className="labelUpdatePaciente">Usuario: </label><br />
-            <input value={updatePaciente.usuario} onChange={onChange} type="text" name="usuario" id="usuario" placeholder={paciente.usuario} className="updatePaciente" />
+            <input value={updatePaciente.usuario} onChange={onChange} type="text" name="usuario" id="usuario" placeholder={paciente.usuario} className="inputUpdatePaciente" />
         </div>
         <div>
             <label className="labelUpdatePaciente">Clave: </label><br />
-            <input value={updatePaciente.clave} onChange={onChange} type="text" name="clave" id="clave" placeholder={paciente.clave} className="updatePaciente" />
+            <input value={updatePaciente.clave} onChange={onChange} type="text" name="clave" id="clave" placeholder={paciente.clave} className="inputUpdatePaciente" />
         </div>
         <div>
             <label className="labelUpdatePaciente">Numero Seguridad Social (nss): </label><br />
-            <input value={updatePaciente.nss} onChange={onChange} type="text" name="nss" id="nss" placeholder={paciente.nss} className="updatePaciente" />
+            <input value={updatePaciente.nss} onChange={onChange} type="text" name="nss" id="nss" placeholder={paciente.nss} className="inputUpdatePaciente" />
         </div>
         <div>
             <label className="labelUpdatePaciente">Numero de la Tarjeta: </label><br />
-            <input value={updatePaciente.numTarjeta} onChange={onChange} type="text" name="numTarjeta" id="numTarjeta" placeholder={paciente.numTarjeta} className="updatePaciente" />
+            <input value={updatePaciente.numTarjeta} onChange={onChange} type="text" name="numTarjeta" id="numTarjeta" placeholder={paciente.numTarjeta} className="inputUpdatePaciente" />
         </div>
         <div>
             <label className="labelUpdatePaciente">Telefono: </label><br />
-            <input value={updatePaciente.telefono} onChange={onChange} type="text" name="telefono" id="telefono" placeholder={paciente.telefono} className="updatePaciente" />
+            <input value={updatePaciente.telefono} onChange={onChange} type="text" name="telefono" id="telefono" placeholder={paciente.telefono} className="inputUpdatePaciente" />
         </div>
         <div>
             <label className="labelUpdatePaciente">Direccion: </label><br />
-            <input value={updatePaciente.direccion} onChange={onChange} type="text" name="direccion" id="direccion" placeholder={paciente.direccion} className="updatePaciente" />
+            <input value={updatePaciente.direccion} onChange={onChange} type="text" name="direccion" id="direccion" placeholder={paciente.direccion} className="inputUpdatePaciente" />
         </div>
         <Link to={"/paciente"}>
-            <button onClick={() => onUpdate()} className="actualizaPaciente">Actualiza</button>
+            <button onClick={() => onUpdate()} className="botonUpdatePaciente">Actualiza</button>
+            <button className="botonUpdatePaciente">Cancelar</button>
         </Link>
     </>
 }

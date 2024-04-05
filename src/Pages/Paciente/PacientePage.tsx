@@ -13,7 +13,6 @@ const PacientePage = () => {
     pac: Array<PacienteDTO> | Array<PacienteRequestDTO>;
   }
 
-  const [loading, setLoading] = useState(false)
   const [paciente, setPaciente] = useState<pacienteState["pac"]>([]);
 
   useEffect(() => {
@@ -21,28 +20,24 @@ const PacientePage = () => {
   }, []);
 
   const getListPacientes = async () => {
-    setLoading(true);
     const res = await pacienteService.getAllPacientes();
     console.log(res.data);
     setPaciente(res.data)
-    setLoading(false)
   }
 
-  const handleBorrarPaciente = async (id:number|undefined) => {
+  const handleBorrarPaciente = async (id: number | undefined) => {
     const confirmacion = window.confirm("¿Estás seguro de que deseas borrar este paciente?");
-    if (confirmacion){
+    if (confirmacion) {
       await pacienteService.deletePaciente(id);
       const updatePacientes = paciente.filter(p => p.id !== id);
       setPaciente(updatePacientes)
     }
   }
 
-  if (loading) return <i>Cargando ...</i>
   return (
     <div>
       <MainHeader />
       <div className="divPaciente">
-
         <div className="tablaPaciente">
           <table>
             <thead>
@@ -78,7 +73,7 @@ const PacientePage = () => {
           <Link to={"/"}>Volver a Inicio</Link>
         </div>
         <div className="formPaciente">
-          <CrearPaciente returnNewPaciente={(newPaciente) =>
+          <CrearPaciente returnNewPaciente={() =>
             getListPacientes()
           } />
         </div>

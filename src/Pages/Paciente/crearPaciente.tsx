@@ -51,6 +51,5 @@ export const CrearPaciente : React.FC<crearPacienteProps> = ({returnNewPaciente}
                 <input value={newPaciente.direccion} onChange={onChange} type="text" name="direccion" id="direccion" placeholder="Direccion" className="inputPaciente"/>
             </div>
         <button onClick={() => onSave()} className="guardaPaciente">Guardar</button>
-     
     </>
 }
