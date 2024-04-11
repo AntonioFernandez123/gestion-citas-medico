@@ -6,6 +6,9 @@ import { ActualizaPaciente } from "../Pages/Paciente/ActualizaPaciente";
 import "../Pages/Paciente/PacientePage.css"
 import { VerMedico } from "../Pages/Medico/VerMedico";
 import { ActualizaMedico } from "../Pages/Medico/ActualizaMedico";
+import CrearCita from "../Pages/Cita/CrearCita";
+import VerCita from "../Pages/Cita/VerCita";
+import ActualizaCita from "../Pages/Cita/ActualizaCita";
 
 // Para la carga lazy en el routing 
 const LazyMedicoPage = lazy(() => import('../Pages/Medico/MedicoPage'))
@@ -40,7 +43,11 @@ export const router = createBrowserRouter([
             <LazyCitaPage />
         </Suspense>
     ) },
+    { path: "cita/:id", element: <VerCita />},
+    { path: "cita/crear", element: <CrearCita />},
+    { path: "cita/actualiza/:id", element: <ActualizaCita />},
 ]);
+
 
 // export const router = createBrowserRouter([
 //     { path: "", element: <HomePage /> },

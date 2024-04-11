@@ -1,0 +1,80 @@
+/* Estilos Cita Page */
+.headerCita{
+    display: flex;
+    justify-content: space-between;
+}
+.volverInicioCita{
+    font-size: larger;
+    margin-right: 30px;
+    margin-top: 20px;
+}
+.crearCita{
+    padding: 10px;
+    font-size: larger;
+}
+.bodyCita{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.divCita{
+    border: 1px solid black;
+    margin: 20px;
+    padding: 10px;
+    justify-content: space-between;
+    display: flex;
+    font-size: larger;
+} 
+.masDetallesCita{
+    padding: 5px;
+    font-size: large;
+}
+
+/* Estilos Crear Cita */
+.labelCita{
+    margin-left: 10%;
+}
+.inputCita{
+    padding: 6px 10px;
+    width: 75%;
+    margin: 5px 10%;
+}
+.selectCita{
+    padding: 6px 10px;
+    width: 60%;
+    margin: 5px 10%;
+}
+.guardaCita{
+    padding: 10px 10px;
+    width: 30%;
+    font-size: large;
+    margin-left: 12%;
+}
+
+/* Estilos Ver Cita */
+.verDetallesCita{
+    border: 1px solid black;
+    margin:5% 25% 2% 25%;
+    padding:0px 20px 10px 20px;
+    font-size: large;
+}
+.tituloVerCita{
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+.botonesVerCita{
+    padding: 10px 10px;
+    width: 30%;
+    font-size: large;
+}
+
+/* Estilos Actualiza Cita */
+.botonActualizaCita{
+    padding: 10px 10px;
+    width: 30%;
+    font-size: large;
+    margin-left: 12%;
+}
+.labelUpdateCita{
+    margin-left: 10%;
+}
+
